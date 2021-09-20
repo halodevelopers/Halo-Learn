@@ -1,0 +1,14 @@
+.container{
+    max-width: fit-content;
+    width: 100%;
+}
+
+p{
+    text-align: justify;
+    color: green;
+}
+
+.card-text{
+    text-align: justify;
+    color: green;
+}
