@@ -12,6 +12,17 @@
 ```python
 - which python 
 - pyton3 -m venv <name fo the enviroment here>
+- python3 -m venv venv
+```
+<p>for Linux/Mac user,  venv activation,  in directory where your venv is located</p>
+
+```python
+- source venv/bin/activate
+```
+<p>for Windows user,  venv activation, in directory where your venv is located</p>
+
+```python
+- source venv/script/activate
 ```
 
 ## Blog Features
@@ -23,3 +34,6 @@
 - Search functionality
 - Auto Sitemap
 
+## contributions
+ <p>Contributions are welocome </p> :great:
+ - create a pull request
