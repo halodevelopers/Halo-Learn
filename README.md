@@ -6,8 +6,13 @@
 
 ~~ :joy: Lets find out what it is
 
-- Virtualenv is a tool used to create an isolated Python environment. This environment has its own installation directories that doesn’t share libraries with other virtualenv environments (and optionally doesn’t access the globally installed libraries either). The virtual environment can save you from a great ache of dependencies compatibilities.
+- Virtualenv is a tool used to create an isolated Python environment. This environment has its own installation directories that doesn’t share libraries with other virtualenv environments (and optionally doesn’t access the globally installed libraries either). The virtual environment can save you from a great ache of dependencies compatibilities issues
 
+
+```python
+- which python 
+- pyton3 -m venv <name fo the enviroment here>
+```
 
 ## Blog Features
 
