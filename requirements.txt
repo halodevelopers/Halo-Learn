@@ -1,2 +1,4 @@
 django
 django-ckeditor
+pillow
+django-taggit

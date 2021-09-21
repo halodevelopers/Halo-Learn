@@ -15,6 +15,8 @@
      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/monokai-sublime.min.css">
      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
+     <!-- javascript add -->
+  <script src="{% static 'js/main.js'%}"></script>
     
 </head>
 <body>
@@ -38,6 +40,31 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link2</a>
           </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/tag/linux/' %}active{% endif %}" aria-current="page" href="{{ request.scheme }}://{{ request.get_host }}/tag/linux/">Linux</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == '/tag/tips/' %}active{% endif %}" href="{{ request.scheme }}://{{ request.get_host }}/tag/tips/">Tips</a>
+          </li>
+         
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tutorial
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item {% if request.path == '/tag/python/' %}active{% endif %}" href="{{ request.scheme }}://{{ request.get_host }}/tag/python/">Python</a>
+            </li>
+            
+            <li>
+              <a class="dropdown-item {% if request.path == '/tag/django/' %}active{% endif %}" href="{{ request.scheme }}://{{ request.get_host }}/tag/django/">Django</a>
+            </li>
+          
+          </ul>
+        </li>
+
         </ul>
         <form class="d-flex">
           <input class="form-control mr-0" type="search" placeholder="Search" aria-label="Search">

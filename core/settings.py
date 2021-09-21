@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     
     'ckeditor',
     'ckeditor_uploader',
+    'taggit',
 ]
+
+TAGGIT_CASE_INSENSITIVE = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
