@@ -12,3 +12,9 @@ p{
     text-align: justify;
     color: green;
 }
+
+article img{
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: .25rem!important;
+}

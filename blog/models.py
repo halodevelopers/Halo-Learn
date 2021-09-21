@@ -4,6 +4,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+
+from ckeditor_uploader.fields import RichTextUploadingField
 # Using a custom model Manager
 class PublishedManager(models.Manager):
     def get_queryset(self):
@@ -19,7 +21,8 @@ class Post(models.Model):
     title = models.CharField(max_length=250, blank=False, null=True)
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=False, related_name='blog_post')
-    body = models.TextField()
+    # body = models.TextField()
+    body=RichTextUploadingField(null=True, blank=False) # add this
     
     
     
