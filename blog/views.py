@@ -7,6 +7,7 @@ from .models import Post, Comment
 from .forms import CommentForm
 from taggit.models import Tag
 from django.db.models import Count
+from django.db.models import Q
 
 # Create your views here.
 def post_list(request, tag_slug=None):
@@ -24,6 +25,17 @@ def post_list(request, tag_slug=None):
     except EmptyPage:
         # if page is out of range, deliver last page
         posts = paginator.page(paginator.num_page)
+    
+    
+    
+    # search
+    query = request.GET.get("q")
+    if query:
+        posts=Post.published.filter(Q(title__icontains=query) | Q(tags__name__icontains=query)).distinct()
+
+
+    
+    
     
     # post tag
     
@@ -63,7 +75,16 @@ def post_detail(request, post):
             return redirect(post.get_absolute_url()+'#'+str(new_comment.id))
         else:
             comment_form = CommentForm()
-    return render(request, 'post_detail.html',{'post':post,'comments': comments,'comment_form':comment_form})
+    # return render(request, 'post_detail.html',{'post':post,'comments': comments,'comment_form':comment_form})
+
+
+    # List of similar posts
+    post_tags_ids = post.tags.values_list('id', flat=True)
+    similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(id=post.id)
+    similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags','-publish')[:6]
+    return render(request, 'post_detail.html',{'post':post,'comments': comments,'comment_form':comment_form,'similar_posts':similar_posts})
+
+
 
 # handling reply, reply view
 def reply_page(request):
