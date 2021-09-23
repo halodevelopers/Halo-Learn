@@ -2,4 +2,7 @@ django
 django-ckeditor
 pillow
 django-taggit
+gunicorn
 whitenoise
+dj-database-url
+psycopg2
