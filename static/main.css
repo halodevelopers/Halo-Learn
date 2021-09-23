@@ -11,6 +11,7 @@ p{
 .card-text{
     text-align: justify;
     color: green;
+    text-decoration: none;
 }
 
 article img{
@@ -20,5 +21,5 @@ article img{
 }
 
 .featured-image-list{
-    object-fit: cover;
+    object-fit: contain;
 }
