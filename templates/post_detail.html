@@ -22,7 +22,7 @@
 <article>
 
     <div class="mt-3">
-        <h1>{{post.title}}</h1>
+        <h1 style="font-weight: 600; color: chocolate;">{{post.title}}</h1>
         <p class="text-muted">
             Published {{ post.publish.date }} by <strong>{{ post.author }}</strong>
         </p>
@@ -48,11 +48,11 @@
 
 
 <hr />
-<h3>Add Comment</h3>
+<h3 >Add Comment</h3>
 <form method="post" action="">
     {% csrf_token %}
     {{ comment_form.as_p }}
-    <button type="submit" class="btn btn-primary">Comment</button>
+    <button type="submit" class="btn btn-primary" style="color: #333; border-color: chocolate; border-radius: 0; background-color: chocolate;">Comment</button>
 </form>
 
 
@@ -78,7 +78,7 @@ No comments yet
 <hr />
 
 <div class="my-3">
-    <h3>Similar Posts</h3>
+    <h3 style="color: #333;">Similar Posts</h3>
 </div>
 <div class="row">
     {% for post in similar_posts %}
