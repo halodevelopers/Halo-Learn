@@ -6,3 +6,5 @@ gunicorn
 whitenoise
 dj-database-url
 psycopg2
+django-heroku
+mysqlclient
