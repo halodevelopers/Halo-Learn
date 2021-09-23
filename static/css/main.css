@@ -1,0 +1,45 @@
+.container{
+    max-width: fit-content;
+    width: 100%;
+}
+
+p{
+    text-align: justify;
+    color: green;
+    text-transform: uppercase;
+}
+
+.card-text{
+    text-align: justify;
+    color: green;
+    text-decoration: none;
+}
+
+article img{
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: .25rem!important;
+}
+
+.featured-image-list{
+    object-fit: contain;
+}
+
+.navbar{
+    background-color: black;
+    box-shadow: 0 px50px 10px 0px;
+    
+    
+}
+
+.navbar .container .navbar-brand{
+        color: blanchedalmond;
+        text-transform: uppercase;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand{
+    text-transform: uppercase;
+    text-shadow: 2px;
+    color: chocolate;
+}
